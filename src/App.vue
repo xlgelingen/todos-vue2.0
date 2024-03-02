@@ -1,32 +1,55 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
+    <div class="todoapp">
+      <header-com />
+      <mainer-com />
+      <footer-com />
+    </div>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import "@/assets/base.css";
+import "@/assets/index.css";
+import Header from "@/components/HeaderCom.vue";
+import Mainer from "@/components/MainCom.vue";
+import footer from "@/components/FooterCom.vue";
 
-nav {
-  padding: 30px;
+export default {
+  name: "App",
+  components: {
+    "header-com": Header,
+    "mainer-com": Mainer,
+    "footer-com": footer,
+  },
+  // data() {
+  //   return {
+  //     todos: [
+  //       {
+  //         title: "任务一",
+  //         completed: true,
+  //       },
+  //       {
+  //         title: "任务二",
+  //         completed: false,
+  //       },
+  //     ],
+  //     filter: "all"      
+  //   };
+  // },
+  // created() {
+  //   this.fetchFilter();
+  // },
+  // watch: {
+  //   '$route': 'fetchFilter'
+  // },
+  // methods: {
+  //   fetchFilter: function() {
+  //     let filter = this.$route.params.filter;
+  //     this.filter = filter;
+  //   }
+  // },
+};
+</script>
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<style lang="less"></style>
